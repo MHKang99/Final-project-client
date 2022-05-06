@@ -1,38 +1,264 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.card {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: .5rem;
+  border-width: 3px;
+  padding: .5rem;
+  max-width: 300px;
+  margin: 0 auto;
+  animation: fade 250ms ease-in-out forwards;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5rem;
+  gap: .25em;
+}
+
+.form-group:last-child {
+  margin: 0;
+}
+
+.form-group > label {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgb(230, 251, 255);
+  font-size: 16px;
+}
+
+.form-group > input {
+  border: 1px solid #333;
+  border-radius: .25em;
+  font-size: 1rem;
+  padding: .25em;
+  background: transparent;
+}
+
+.step-title {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card.active {
+  animation: slide 250ms 125ms ease-in-out both;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.multi-step-form {
+  overflow: hidden;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.75);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.signUpForm {
+  padding-top:  20vh;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(45deg, rgb(5, 102, 167), rgb(79, 184, 216), rgb(216, 235, 255) );
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 15s ease-in-out infinite;
+}
+
+@keyframes change {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+
+button {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  background-color: rgb(6, 109, 156, 1);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgb(6, 109, 156, 0.8);
+}
+
+.submit-btn {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  background-color: rgb(6, 109, 156);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 7px;
+  transition: all 0.3s ease 0s;
+}
+
+.submit-btn:hover {
+  background-color: rgb(6, 109, 156, 0.8);
+}
+
+.Logo {
+  width: 100px;
+
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  
+}
+
+nav > li, a {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+}
+
+.Logo {
+  cursor: pointer;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links .nav-item {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links > a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links a:hover {
+  color: rgb(46, 125, 145);
+}
+
+div.error-page {
+  padding-top: 100px;
+  font-family: 'Orbitron', sans-serif;
   display: flex;
   flex-direction: column;
+  font-size: 50px;
+  width: 100%;
+  height: 500px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-top: 1px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.previous-btn {
+  margin-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disabled {
+  display: none;
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.highscore-container {
+  display: flex;  
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: #333 2px solid;
+  height: 700px;
+}
+
+.highscore {
+  margin-left: 20px;
+}
+
+.leaderboard-title {
+  font-family: 'Orbitron', sans-serif;
+  margin-left: 20px;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 80px;
+  border: #333 2px solid;
+}
+
+.profile-container {
+  margin-left: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.profile-name {
+  position: relative;
+  width: 200px;
+  top: -10px;
+  left: 75px;
 }
